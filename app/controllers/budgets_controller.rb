@@ -4,7 +4,8 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.json
   def index
-    @budgets = Budget.all
+    @search = Budget.search(params[:q])
+    @budgets = @search.result
   end
 
   # GET /budgets/1
