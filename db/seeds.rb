@@ -14,5 +14,14 @@ Year.create([
     {name: '2017'}
     ])
 
-
+Commodity.destroy_all
+Commodity.create([
+    {name: 'Alfalfa'}.
+    {name: 'Barley'},
+    {name: 'Corn'},
+    {name: 'Hay'},
+    {name: 'Rice'},
+    {name: 'Soybeans'},
+    {name: 'Wheat'}
+    ])
 
