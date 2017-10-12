@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Year.destroy_all
+
+Year.create([
+    {name: '2019'},
+    {name: '2018'},
+    {name: '2017'}
+    ])
+
+
+

@@ -25,10 +25,11 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/budgets">Summary</a></li>
-            <li class="<%= 'active' if current_page?(budgets_path) %>"><%= link_to "Budgets", budgets_path %></li>
+            <li class="<%= 'active' if (current_page?(budgets_path)||current_page?(new_budget_path)||current_page?(edit_budget_path)) %>"><%= link_to "Budgets", budgets_path %></li>
           </ul>
           <p class="navbar-text pull-right">
-           logout
+            <i class="glyphicon glyphicon-cog settingsicon"></i>
+           Logout
           </p>
         </div>
       </div>
