@@ -61,6 +61,7 @@ body {
 .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
     border-bottom:2px solid #fff;
+    max-width:95%;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -68,6 +69,7 @@ body {
     color: #fff;
     border-bottom:2px solid #fff;
     background-color: #45a15c;
+     max-width:95%;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
