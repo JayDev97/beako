@@ -188,7 +188,7 @@ body {
 }
 
 .btnfooter{
-    padding-top:20px;
+    padding-top:10px;
 }
 
 .btn-success{
@@ -205,4 +205,24 @@ body {
 
 footer{
     font-size:8pt;
+    padding-top:6px;
+}
+
+.summary_header{
+    background:#fff; min-height:250px;
+    padding:20px;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #a9a9a9;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+
+}
+
+.circle:hover {
+	background:#eeeeee;
 }

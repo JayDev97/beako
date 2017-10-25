@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Beako</title>
+    <title>CroKet</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -20,14 +20,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a> <%= link_to image_tag("croket_icon.png", alt: "logo", size:"48x48" ), '/', class: 'navbar-brand' %></a>
+          <a> <%= link_to image_tag("croket_icon.png", alt: "logo", size:"42x42" ), '/', class: 'navbar-brand' %></a>
            
           
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/budgets">Summary</a></li>
-            <li class="<%= 'active' if (current_page?(budgets_path)||current_page?(new_budget_path)||current_page?(edit_budget_path)) %>"><%= link_to "Budgets", budgets_path %></li>
+            <li class="<%= 'active' if (current_page?(summary_path))%>"><%= link_to "Summary", summary_path %></li>
+            <li class="<%= 'active' if (current_page?(budgets_path)||current_page?(new_budget_path)) %>"><%= link_to "Budgets", budgets_path %></li>
           </ul>
           <p class="navbar-text pull-right">
             <i class="glyphicon glyphicon-cog settingsicon"></i>
@@ -46,7 +46,9 @@
     </div>
     <footer>
       <div class="footer">
-        © 2017 - Croket. All Rights Reserved
+         <%= link_to image_tag("animat-rocket.gif", {:style => "width:80px;"}), '/budgets/new' %>
+         </br>
+          © 2017 - CroKet. All Rights Reserved
       </div>
     </footer>
   </body>
