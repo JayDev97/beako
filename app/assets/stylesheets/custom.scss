@@ -139,10 +139,46 @@ body {
    background-color:#F5F5F5;
 }
 
+.table>tfoot>tr>td {
+   border-top:0px; // Choose your own color here
+}
+
 .table-striped>tbody>tr:nth-child(odd)>td, {
   background-color:#fff;
  }
+ 
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-color: #fff;
+    background-color: #45A15C;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
 
+.pagination {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
 
 #custom-search-input{
     padding: 3px;
@@ -225,4 +261,8 @@ footer{
 
 .circle:hover {
 	background:#eeeeee;
+}
+
+.center {
+   text-align: center;
 }

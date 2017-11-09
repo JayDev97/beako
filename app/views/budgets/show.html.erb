@@ -1,9 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form role="form">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+             <strong>Name:</strong>
+             <%= @budget.name %>
+             <%= link_to '(Edit)', edit_budget_path(@budget) %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+             <strong>Year:</strong>
+             <%= @budget.year.name %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+             <strong>Commodity:</strong>
+             <%= @budget.crop.name %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+             <strong>Total Acres:</strong>
+             <%= @budget.totalacres %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+             <strong>Target yield (bu/ac):</strong>
+             <%= @budget.targetyield %>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @budget.name %>
-</p>
 
-<%= link_to 'Edit', edit_budget_path(@budget) %> |
 <%= link_to 'Back', budgets_path %>

@@ -1,11 +1,21 @@
 class BudgetsController < ApplicationController
+  
+  before_action :authenticate_user!
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
 
   # GET /budgets
   # GET /budgets.json
   def index
-    @search = Budget.search(params[:q])
-    @budgets = @search.result
+    @select = Budget.where("budgets.user_id = ?", current_user.id)
+    @search = @select.search(params[:q])
+    @budgets = @search.result.paginate(:page => params[:page], :per_page => 5)
+    if @select.empty?
+      @visible = false
+    else
+      @visible = true
+      @search = @select.search(params[:q])
+      @budgets = @search.result.paginate(:page => params[:page], :per_page => 5)
+    end 
   end
 
   # GET /budgets/1
@@ -70,6 +80,6 @@ class BudgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
-      params.require(:budget).permit(:name, :year_id, :crop_id)
+      params.require(:budget).permit(:name, :year_id,:totalacres,:targetyield, :crop_id).merge(user_id: current_user.id)
     end
 end
