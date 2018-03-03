@@ -1,7 +1,7 @@
 <%= form_for(budget) do |f| %>
    <% if budget.errors.any? %>
      <div id="error_explanation">
-       <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+       <h3>Please fix the following <%= pluralize(budget.errors.count, "error") %> before saving:</h3>
  
        <ul>
        <% budget.errors.full_messages.each do |message| %>
@@ -20,11 +20,11 @@
                    </div>
                    <div class="form-group">
                          <%= f.label :year, class:"form-label" %>
-                        <%= f.collection_select :year_id, Year.all, :id, :name,{}, {class: "form-control"} %>
+                        <%= f.collection_select :year_id, Year.all, :id, :name,{:prompt => 'Please select budget year'}, {class: "form-control"} %>
                    </div>
                    <div class="form-group">
                          <%= f.label :crop, class:"form-label" %>
-                        <%= f.collection_select :crop_id, Crop.all, :id, :name,{}, {class: "form-control"} %>
+                        <%= f.collection_select :crop_id, Crop.all, :id, :name,{:prompt => 'Please select crop type for budget'}, {class: "form-control"} %>
                    </div>
                    <div class="form-group">
                      <%= f.label :"Acres", class:"form-label" %>
@@ -35,8 +35,8 @@
                      <%= f.number_field :targetyield, id: :budget_targetyield,:required => true, class: "form-control", :step => 0.01 %>
                    </div>
                     <div class="btnfooter">
-                        <%= f.submit :class => 'btn btn-success round' %>
-                         <%= link_to 'Cancel', budgets_path, :class => 'btn btn-default round' %>
+                        <%= link_to 'Cancel', budgets_path, :class => 'btn btn-default round' %>
+                        <%= f.submit :class => 'btn btn-primary round' %>
                     </div>
                     
                 </div>

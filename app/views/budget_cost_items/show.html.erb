@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @budget_cost_item.item %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @budget_cost_item.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @budget_cost_item.unit_id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @budget_cost_item.price %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @budget_cost_item.total %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @budget_cost_item.budget_id %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @budget_cost_item.account_id %>
+</p>
+
+<%= link_to 'Edit', edit_budget_cost_item_path(@budget_cost_item) %> |
+<%= link_to 'Back', budget_cost_items_path %>

@@ -1,12 +1,13 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+
+
     <form role="form">
       <div class="row">
         <div class="col-sm-4">
           <div class="form-group">
-             <strong>Name:</strong>
+             <h4>
              <%= @budget.name %>
              <%= link_to '(Edit)', edit_budget_path(@budget) %>
+             </h4>
           </div>
         </div>
       </div>
@@ -33,14 +34,113 @@
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-             <strong>Target yield (bu/ac):</strong>
+             <strong>Target Yield (bu/ac):</strong>
              <%= @budget.targetyield %>
           </div>
         </div>
+        <div class="col-md-6">
+        <span class="pull-right">
+          <%= link_to new_budget_item_path(:budid =>@budget.id), class: 'btn btn-primary round' do %>
+            Add Item
+          <% end %>
+        </span>
+      </div>
       </div>
     </form>
-  </div>
-</div>
+   <br/>
+   <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>Income</h4>
+       <table class="table table-striped">
+         <thead>
+          <tr>
+            <th class="col-xs-2">Account</th>
+            <th class="col-xs-4">Item</th>
+            <th class="col-xs-1">Quantity</th>
+            <th class="col-xs-1">Unit</th>
+            <th class="col-xs-1">Price</th>
+            <th class="col-xs-1">Total</th>
+            
+            <th colspan="2" class="col-xs-2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @budget_items_income.each do |budget_items_income| %>
+            <tr>
+              <td><%= budget_items_income.account.name %></td>
+              <td><%= budget_items_income.item %></td>
+              <td><%= budget_items_income.quantity %></td>
+              <td><%= budget_items_income.unit.name %></td>
+              <td><%= budget_items_income.price %></td>
+              <td><%= budget_items_income.total %></td>
+              <td>
+                <div class="btn-group btn-group-sm pull-right" role="group" aria-label="Basic example">
+                    
+                    <%= link_to edit_budget_item_path(budget_items_income), class: 'btn btn-default' do %><i class="glyphicon glyphicon-pencil"></i>
+                 
+                    <% end %>
+                    <%= link_to budget_items_income, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %><i class="glyphicon glyphicon-trash"></i>
+                  
+                    <% end %>
+        
+                 </div>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+      <h4>Expenses</h4> 
+       <table class="table table-striped">
+         <thead>
+          <tr>
+            <th class="col-xs-2">Account</th>
+            <th class="col-xs-4">Item</th>
+            <th class="col-xs-1">Quantity</th>
+            <th class="col-xs-1">Unit</th>
+            <th class="col-xs-1">Price</th>
+            <th class="col-xs-1">Total</th>
+            
+            <th colspan="2" class="col-xs-2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @budget_items_expense.each do |budget_item| %>
+            <tr>
+              <td><%= budget_item.account.name %></td>
+              <td><%= budget_item.item %></td>
+              <td><%= budget_item.quantity %></td>
+              <td><%= budget_item.unit.name %></td>
+              <td><%= budget_item.price %></td>
+              <td><%= budget_item.total %></td>
+              <td>
+                 <div class="btn-group btn-group-sm pull-right" role="group" aria-label="Basic example">
+                    
+                    <%= link_to edit_budget_item_path(budget_item), class: 'btn btn-default' do %><i class="glyphicon glyphicon-pencil"></i>
+                 
+                    <% end %>
+                    <%= link_to budget_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %><i class="glyphicon glyphicon-trash"></i>
+                  
+                    <% end %>
+                  
+        
+                 </div>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+     </div>
+   </div>
+  
+  
+   
+   
+    
+       
+       
+        
+        
+ 
 
 
 <%= link_to 'Back', budgets_path %>

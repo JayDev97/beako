@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102204150) do
+ActiveRecord::Schema.define(version: 20180101211518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "account_type"
+    t.string   "status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "budget_cost_items", force: :cascade do |t|
+    t.string   "item"
+    t.decimal  "quantity"
+    t.integer  "unit_id"
+    t.decimal  "price"
+    t.decimal  "total"
+    t.integer  "budget_id"
+    t.integer  "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "budget_items", force: :cascade do |t|
+    t.string   "item"
+    t.decimal  "quantity"
+    t.integer  "unit_id"
+    t.decimal  "price"
+    t.decimal  "total"
+    t.integer  "budget_id"
+    t.integer  "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "budgets", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +67,12 @@ ActiveRecord::Schema.define(version: 20171102204150) do
   end
 
   create_table "crops", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "units", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -16,11 +16,22 @@ class BudgetsController < ApplicationController
       @search = @select.search(params[:q])
       @budgets = @search.result.paginate(:page => params[:page], :per_page => 5)
     end 
+    
   end
 
   # GET /budgets/1
   # GET /budgets/1.json
   def show
+    
+    @budget_items = @budget.budget_items.all
+    
+    @budget_items_income = @budget.budget_items.joins(:account).where('accounts.account_type =?', 'Income' )
+    @budget_items_expense = @budget.budget_items.joins(:account).where('accounts.account_type =?', 'Expense' )
+   
+     
+    
+    
+    
   end
 
   # GET /budgets/new

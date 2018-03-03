@@ -259,6 +259,8 @@ footer{
 
 }
 
+h5 { display: inline-block; }
+
 .circle:hover {
 	background:#eeeeee;
 }
@@ -266,3 +268,8 @@ footer{
 .center {
    text-align: center;
 }
+
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+  }

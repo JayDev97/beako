@@ -31,29 +31,42 @@
    
     <div class="container">
       <h3>Welcome Jason!</h3>
-      <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-sm-12">
-              <div class="col-sm-4">
-                <h4>Create a budget</h4>
-                <p>Create a crop budget and boost your farm performance!</p>
-                <%= link_to new_budget_path, class: 'btn btn-success round' do %>
-                  Go
-                <% end %>
-              </div>
-              <div class="col-sm-4">
-               
-              </div>
-              <div class="col-sm-4">
-            
-              </div>
-            </div>
-        </div>
-       
-       
+      <div class="row">
+        <div class="col-sm-4">
+      		<div class="panel panel-default">
+      			<div class="panel-body">            
+              <h4>Create a budget</h4>
+              <p>Create a crop budget and boost your farm performance!</p>
+              <%= link_to new_budget_path, class: 'btn btn-success round' do %>
+                Go
+              <% end %>
+            </div>              
+          </div>
+        </div> 
+        <div class="col-sm-4">
+      		<div class="panel panel-default">
+      			<div class="panel-body">            
+              <h4>View Your Plans</h4>
+              <p>Create a crop budget and boost your farm performance!</p>
+              <%= link_to budgets_path, class: 'btn btn-success round' do %>
+                Go
+              <% end %>
+            </div>              
+          </div>
+        </div> 
+        <div class="col-sm-4">
+      		<div class="panel panel-default">
+      			<div class="panel-body">            
+              <h4>Awesome</h4>
+              <p>Just added this as a place holder!</p>
+              <%= link_to budgets_path, class: 'btn btn-success round' do %>
+                Go
+              <% end %>
+            </div>              
+          </div>
+        </div> 
       </div>
     </div>
-    
   </body>
 
 </html>
